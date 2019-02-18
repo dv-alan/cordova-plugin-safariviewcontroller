@@ -62,6 +62,7 @@ public class ChromeCustomTabPlugin extends CordovaPlugin{
 
                 final String toolbarColor = options.optString("toolbarColor");
                 final Boolean showDefaultShareMenuItem = options.optBoolean("showDefaultShareMenuItem");
+                final String browserPackageName = options.optString("androidPackageName");
                 String transition = "";
                 mStartAnimationBundle = null;
                 final Boolean animated = options.optBoolean("animated", true);
@@ -71,7 +72,7 @@ public class ChromeCustomTabPlugin extends CordovaPlugin{
                 JSONObject result = new JSONObject();
                 if(isAvailable()) {
                     try {
-                        this.show(url, getColor(toolbarColor), showDefaultShareMenuItem, transition);
+                        this.show(url, androidPackageName, getColor(toolbarColor), showDefaultShareMenuItem, transition);
                         result.put("event", "loaded");
                         pluginResult = new PluginResult(PluginResult.Status.OK, result);
                         pluginResult.setKeepCallback(true);
@@ -119,7 +120,7 @@ public class ChromeCustomTabPlugin extends CordovaPlugin{
         return mCustomTabPluginHelper.isAvailable();
     }
 
-    private void show(String url, @ColorInt int toolbarColor, boolean showDefaultShareMenuItem, String transition) {
+    private void show(String url, String browserPackageName, @ColorInt int toolbarColor, boolean showDefaultShareMenuItem, String transition) {
         CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder(getSession())
                 .setToolbarColor(toolbarColor);
         if(showDefaultShareMenuItem)
@@ -127,11 +128,11 @@ public class ChromeCustomTabPlugin extends CordovaPlugin{
         if(!TextUtils.isEmpty(transition))
             addTransition(builder, transition);
        
-
         CustomTabsIntent customTabsIntent = builder.build();
         
-        String packageName = CustomTabsHelper.getPackageNameToUse(cordova.getActivity());
-        if ( packageName != null ) {
+        String packageName = (String.isEmpty(browserPackageName)? CustomTabsHelper.getPackageNameToUse(cordova.getActivity()) :  browserPackageName);
+        
+        if ( packageName != null && !String.isEmpty(packageName)) {
            customTabsIntent.intent.setPackage(packageName);
         }
 
