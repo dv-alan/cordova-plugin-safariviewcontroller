@@ -130,9 +130,9 @@ public class ChromeCustomTabPlugin extends CordovaPlugin{
        
         CustomTabsIntent customTabsIntent = builder.build();
         
-        String packageName = (String.isEmpty(browserPackageName)? CustomTabsHelper.getPackageNameToUse(cordova.getActivity()) :  browserPackageName);
-        
-        if ( packageName != null && !String.isEmpty(packageName)) {
+        String packageName = (browserPackageName.isEmpty()? CustomTabsHelper.getPackageNameToUse(cordova.getActivity()) :  browserPackageName);
+
+        if ( packageName != null && !packageName.isEmpty()) {
            customTabsIntent.intent.setPackage(packageName);
         }
 
