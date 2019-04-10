@@ -72,7 +72,7 @@ public class ChromeCustomTabPlugin extends CordovaPlugin{
                 JSONObject result = new JSONObject();
                 if(isAvailable()) {
                     try {
-                        this.show(url, androidPackageName, getColor(toolbarColor), showDefaultShareMenuItem, transition);
+                        this.show(url, browserPackageName, getColor(toolbarColor), showDefaultShareMenuItem, transition);
                         result.put("event", "loaded");
                         pluginResult = new PluginResult(PluginResult.Status.OK, result);
                         pluginResult.setKeepCallback(true);
