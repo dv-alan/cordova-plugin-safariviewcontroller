@@ -1,13 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <plugin
-    id="cordova-plugin-safariviewcontroller"
+    id="cordova-plugin-safariviewcontroller-dv-it"
     version="1.5.4"
     xmlns="http://apache.org/cordova/ns/plugins/1.0">
 
   <name>SafariViewController</name>
 
-  <author>Eddy Verbruggen</author>
-
+  <author>Devere IT</author>
+  <repo>https://github.com/dv-alan/cordova-plugin-safariviewcontroller.git</repo>
+  <issue>https://github.com/dv-alan/cordova-plugin-safariviewcontroller/issues</issue>
   <description>
     Forget InAppBrowser for iOS - this is way better for displaying read-only web content in your PhoneGap app.
   </description>
