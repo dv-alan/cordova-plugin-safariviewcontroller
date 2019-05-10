@@ -1,23 +1,23 @@
 {
-  "name": "cordova-plugin-safariviewcontroller",
+  "name": "cordova-plugin-safariviewcontroller-dv-it",
   "version": "1.5.4",
-  "description": "Forget InAppBrowser for iOS - this is way better for displaying read-only web content in your PhoneGap app.",
+  "description": "\r\n    Forget InAppBrowser for iOS - this is way better for displaying read-only web content in your PhoneGap app.\r\n  ",
   "cordova": {
-    "id": "cordova-plugin-safariviewcontroller",
+    "id": "cordova-plugin-safariviewcontroller-dv-it",
     "platforms": [
-      "ios"
+      "ios",
+      "android"
     ]
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EddyVerbruggen/cordova-plugin-safariviewcontroller.git"
+    "url": "git+https://github.com/dv-alan/cordova-plugin-safariviewcontroller.git"
   },
   "keywords": [
     "InAppBrowser",
     "InAppSafariBrowser",
     "Safari",
     "Safari ViewController",
-    "Chrome Custom Tabs",
     "ecosystem:cordova",
     "cordova-ios",
     "cordova-android"
@@ -28,10 +28,10 @@
       "version": ">=3.0.0"
     }
   ],
-  "author": "Eddy Verbruggen <eddyverbruggen@gmail.com> (https://github.com/EddyVerbruggen)",
+  "author": "Devere IT",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/EddyVerbruggen/cordova-plugin-safariviewcontroller/issues"
+    "url": "https://github.com/dv-alan/cordova-plugin-safariviewcontroller/issues"
   },
-  "homepage": "https://github.com/EddyVerbruggen/cordova-plugin-safariviewcontroller#readme"
+  "homepage": "https://github.com/dv-alan/cordova-plugin-safariviewcontroller#readme"
 }
